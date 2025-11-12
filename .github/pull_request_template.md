@@ -1,26 +1,26 @@
-# 🚀 Pull Request – Tests unitaires du `coursesController` et `studentsController`  
+# Pull Request – Tests unitaires du `coursesController` et `studentsController`  
 
-## 🧾 Description
+##  Description
 
 Les tests utilisent **Jest** avec des **mocks du module `storage`**, afin de vérifier les comportements du contrôleur en isolation.
 
 ---
 
-## 🔍 Changements principaux
+## Changements principaux
 
-- ✅ Ajout du fichier de test : `tests/unit/controllers/coursesController.test.js` et `studentsController.tes.js`
-- 🧪 Mise en place des tests unitaires suivants :
+- Ajout du fichier de test : `tests/unit/controllers/coursesController.test.js` et `studentsController.tes.js`
+- Mise en place des tests unitaires suivants :
   - `listCourses` → pagination et filtrage
   - `getCourse` → gestion du 404 et récupération du cours + étudiants
   - `createCourse` → validation des champs et création
   - `deleteCourse` → gestion du 404, des erreurs et succès (204)
   - `updateCourse` → vérification de l’unicité du titre et mise à jour
-- 🧹 Réinitialisation des mocks avant chaque test (`beforeEach`)
-- 🧩 Utilisation de `jest.mock('../../../src/services/storage')` pour isoler la logique
+- Réinitialisation des mocks avant chaque test (`beforeEach`)
+- Utilisation de `jest.mock('../../../src/services/storage')` pour isoler la logique
 
 ---
 
-## 🧠 Type de tests
+## Type de tests
 
 | Type                  | Détails                                                  |
 | --------------------- | -------------------------------------------------------- |
@@ -29,7 +29,7 @@ Les tests utilisent **Jest** avec des **mocks du module `storage`**, afin de vé
 
 ---
 
-## 🧰 Stack technique utilisée
+## Stack technique utilisée
 
 - **Node.js**
 - **Jest** pour les tests
@@ -41,7 +41,7 @@ Les tests utilisent **Jest** avec des **mocks du module `storage`**, afin de vé
 
 ---
 
-## 🧪 Résultat attendu
+## Résultat attendu
 
 Tous les tests doivent passer :
 
