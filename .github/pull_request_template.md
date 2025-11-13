@@ -1,18 +1,50 @@
-# Description de la PR
-Décris ici ce que cette Pull Request change et pourquoi.
+# Pull Request – Tests unitaires du `coursesController` et `studentsController`  
 
-# Type de modification
-- [ ] Bugfix
-- [ ] Nouvelle fonctionnalité
-- [ ] Refactorisation
-- [ ] Documentation
+##  Description
 
-# Checklist
-- [ ] J'ai testé mes modifications
-- [ ] J'ai ajouté/ajusté les tests unitaires
-- [ ] La documentation a été mise à jour
-- [ ] Le code suit les standards ESLint/Prettier
+Les tests utilisent **Jest** avec des **mocks du module `storage`**, afin de vérifier les comportements du contrôleur en isolation.
 
-# Liens
-- Issue associée (si applicable) : #
-- Captures d'écran ou GIF (si UI modifiée)
+---
+
+## Changements principaux
+
+- Ajout du fichier de test : `tests/unit/controllers/coursesController.test.js` et `studentsController.tes.js`
+- Mise en place des tests unitaires suivants :
+  - `listCourses` → pagination et filtrage
+  - `getCourse` → gestion du 404 et récupération du cours + étudiants
+  - `createCourse` → validation des champs et création
+  - `deleteCourse` → gestion du 404, des erreurs et succès (204)
+  - `updateCourse` → vérification de l’unicité du titre et mise à jour
+- Réinitialisation des mocks avant chaque test (`beforeEach`)
+- Utilisation de `jest.mock('../../../src/services/storage')` pour isoler la logique
+
+---
+
+## Type de tests
+
+| Type                  | Détails                                                  |
+| --------------------- | -------------------------------------------------------- |
+| **Unitaires**         | Tests isolés des contrôleurs, mocks du service `storage` |
+| **Pas d’intégration** | Aucun appel HTTP réel ni base de données utilisée        |
+
+---
+
+## Stack technique utilisée
+
+- **Node.js**
+- **Jest** pour les tests
+- **Mocking avec Jest**
+- Architecture MVC :
+  - `controllers/`
+  - `services/`
+  - `tests/`
+
+---
+
+## Résultat attendu
+
+Tous les tests doivent passer :
+
+```bash
+npm test
+```
